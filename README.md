@@ -1,4 +1,4 @@
-This repository was developed from [this one](https://github.com/for-giobbe/PAINT/tree/main) and contains all the code used to study the molecular groundplan of a plant-ant interaction.
+This repo was developed from [this one](https://github.com/for-giobbe/PAINT/tree/main) and contains all  code used to study the groundplan of a plant-ant interaction.
 
 Most of the code was generated for RNA-seq of the ant Crematogaster scutellaris and the plant Vicia faba.
 
