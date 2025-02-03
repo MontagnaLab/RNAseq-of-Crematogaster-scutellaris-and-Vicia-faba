@@ -1,0 +1,35 @@
+GO.ID	Term	Annotated	Significant	Expected	test
+GO:0072330	monocarboxylic acid biosynthetic process	65	5	0.51	0.00014
+GO:0006631	fatty acid metabolic process	83	5	0.65	0.00045
+GO:0044283	small molecule biosynthetic process	187	7	1.47	0.00058
+GO:0035178	turning behavior	5	2	0.04	0.00060
+GO:0035179	larval turning behavior	5	2	0.04	0.00060
+GO:0048265	response to pain	5	2	0.04	0.00060
+GO:0048266	behavioral response to pain	5	2	0.04	0.00060
+GO:0050955	thermoception	5	2	0.04	0.00060
+GO:0050960	detection of temperature stimulus involv...	5	2	0.04	0.00060
+GO:0050966	detection of mechanical stimulus involve...	5	2	0.04	0.00060
+GO:0051606	detection of stimulus	190	7	1.5	0.00064
+GO:0033555	multicellular organismal response to str...	6	2	0.05	0.00089
+GO:0050906	detection of stimulus involved in sensor...	149	6	1.17	0.00102
+GO:0055114	oxidation-reduction process	346	9	2.73	0.00129
+GO:0048060	negative gravitaxis	8	2	0.06	0.00165
+GO:0008610	lipid biosynthetic process	164	6	1.29	0.00167
+GO:0050974	detection of mechanical stimulus involve...	9	2	0.07	0.00211
+GO:0016048	detection of temperature stimulus	10	2	0.08	0.00263
+GO:0050951	sensory perception of temperature stimul...	10	2	0.08	0.00263
+GO:0050961	detection of temperature stimulus involv...	10	2	0.08	0.00263
+GO:0050965	detection of temperature stimulus involv...	10	2	0.08	0.00263
+GO:0062149	detection of stimulus involved in sensor...	10	2	0.08	0.00263
+GO:0006278	RNA-dependent DNA biosynthetic process	79	4	0.62	0.00331
+GO:0032787	monocarboxylic acid metabolic process	132	5	1.04	0.00359
+GO:0050982	detection of mechanical stimulus	13	2	0.1	0.00449
+GO:0071897	DNA biosynthetic process	148	5	1.17	0.00585
+GO:0007638	mechanosensory behavior	15	2	0.12	0.00598
+GO:0019752	carboxylic acid metabolic process	282	7	2.22	0.00609
+GO:0006082	organic acid metabolic process	293	7	2.31	0.00748
+GO:0043436	oxoacid metabolic process	293	7	2.31	0.00748
+GO:0007620	copulation	17	2	0.13	0.00767
+GO:0045924	regulation of female receptivity	17	2	0.13	0.00767
+GO:0008049	male courtship behavior	52	3	0.41	0.00775
+GO:0060180	female mating behavior	19	2	0.15	0.00955

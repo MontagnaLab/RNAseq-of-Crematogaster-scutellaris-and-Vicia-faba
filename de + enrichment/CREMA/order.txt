@@ -1,0 +1,110 @@
+alpha-amino acid biosynthetic process	Amino acids metabolism
+alpha-amino acid catabolic process	Amino acids metabolism
+alpha-amino acid metabolic process	Amino acids metabolism
+aromatic amino acid family catabolic pro...	Amino acids metabolism
+aromatic amino acid family metabolic pro...	Amino acids metabolism
+erythrose 4-phosphate/phosphoenolpyruvate family amino acid metabolic process	Amino acids metabolism
+cellular amino acid biosynthetic process	Amino acids metabolism
+cellular amino acid catabolic process	Amino acids metabolism
+cysteine metabolic process	Amino acids metabolism
+serine family amino acid catabolic proce...	Amino acids metabolism
+serine family amino acid metabolic proce...	Amino acids metabolism
+sulfur amino acid metabolic process	Amino acids metabolism
+tyrosine metabolic process	Amino acids metabolism
+cellular amino acid metabolic process	Amino acids metabolism
+monosaccharide biosynthetic process	Sugars metabolism
+cellular lipid metabolic process	Lipids metabolism
+fatty acid biosynthetic process	Lipids metabolism
+fatty acid catabolic process	Lipids metabolism
+fatty acid metabolic process	Lipids metabolism
+fatty-acyl-CoA metabolic process	Lipids metabolism
+pheromone biosynthetic process	Lipids metabolism
+pheromone metabolic process	Lipids metabolism
+lipid biosynthetic process	Lipids metabolism
+lipid localization	Lipids metabolism
+lipid metabolic process	Lipids metabolism
+long-chain fatty-acyl-CoA metabolic proc...	Lipids metabolism
+regulation of hormone levels	Lipids metabolism
+sphingolipid biosynthetic process	Lipids metabolism
+steroid metabolic process	Lipids metabolism
+very long-chain fatty acid metabolic pro...	Lipids metabolism
+chromosome organization	DNA replication, modification, repare
+DNA biosynthetic process	DNA replication, modification, repare
+DNA replication-independent nucleosome o...	DNA replication, modification, repare
+mRNA polyadenylation	DNA replication, modification, repare
+protein-containing complex assembly	DNA replication, modification, repare
+protein-containing complex subunit organ...	DNA replication, modification, repare
+cellular protein-containing complex assemblay	DNA replication, modification, repare
+purine nucleoside diphosphate metabolic ...	DNA replication, modification, repare
+purine ribonucleoside diphosphate metabo...	DNA replication, modification, repare
+ribonucleoside diphosphate metabolic pro...	DNA replication, modification, repare
+RNA-dependent DNA biosynthetic process	DNA replication, modification, repare
+calcium ion transmembrane transport	Cellular transport
+calcium ion transport	Cellular transport
+regulation of signaling receptor activit...	Cellular transport
+positive regulation of transmembrane receptor protein serine/threonine kinase signaling pathway	Cellular transport
+detection of abiotic stimulus	Responce to stimulus
+response to xenobiotic stimulus	Responce to stimulus
+cellular response to xenobiotic stimulus	Responce to stimulus
+detection of external stimulus	Responce to stimulus
+detection of mechanical stimulus	Responce to stimulus
+sensory perception	Responce to stimulus
+sensory perception of chemical stimulus	Responce to stimulus
+detection of mechanical stimulus involved in sensory percepition of pain	Responce to pain
+detection of mechanical stimulus involved in sensory percepition	Responce to stimulus
+detection of stimulus	Responce to stimulus
+detection of stimulus involved in sensory perception of pain	Responce to pain
+behavioral response to pain	Response to pain
+response to pain	Response to pain
+sensory perception of pain	Response to pain
+detection of stimulus involved in sensory perception	Responce to stimulus
+detection of temperature stimulus	Responce to temperature
+detection of temperature stimulus involved in sensory perception	Responce to temperature
+detection of temperature stimulus involved in sensory perception of pain	Responce to pain
+detection of temperature stimulus involved in thermoception	Responce to temperature
+thermoception	Responce to temperature
+sensory perception of temperature stimul...	Responce to temperature
+mechanosensory behavior	Responce to stimulus
+negative gravitaxis	Responce to stimulus
+multicellular organismal response to stress	Responce to stress
+carboxylic acid biosynthetic process	Different compounds metabolism
+carboxylic acid catabolic process	Different compounds metabolism
+carboxylic acid metabolic process	Different compounds metabolism
+monocarboxylic acid biosynthetic process	Different compounds metabolism
+monocarboxylic acid catabolic process	Different compounds metabolism
+monocarboxylic acid metabolic process	Different compounds metabolism
+organic acid biosynthetic process	Different compounds metabolism
+organic acid catabolic process	Different compounds metabolism
+organic acid metabolic process	Different compounds metabolism
+organonitrogen compound catabolic proces...	Different compounds metabolism
+oxoacid metabolic process	Different compounds metabolism
+small molecule biosynthetic process	Different compounds metabolism
+small molecule catabolic process	Different compounds metabolism
+small molecule metabolic process	Different compounds metabolism
+primary alcohol metabolic process	Different compounds metabolism
+copulation	Reproducution
+egg activation	Reproducution
+female mating behavior	Reproducution
+male courtship behavior	Reproducution
+mating	Reproducution
+regulation of female receptivity	Reproducution
+cellular catabolic process	
+tissue homeostasis	
+system process	
+drug catabolic process	Drug metabolism
+drug metabolic process	Drug metabolism
+xenobiotic metabolic process	xenobiotic metabolism
+larval somatic muscle development	Movement
+larval turning behavior	Movement
+turning behavior	Movement
+muscle contraction	Movement
+muscle fiber development	Movement
+muscle organ development	Movement
+muscle organ morphogenesis	Movement
+muscle structure development	Movement
+muscle system process	Movement
+striated muscle contraction	Movement
+nervous system process	Neurological processes
+neurotransmitter biosynthetic process	Neurological processes
+neurotransmitter metabolic process	Neurological processes
+oxidation-reduction process	oxidation-reduction 

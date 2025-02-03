@@ -1,0 +1,31 @@
+GO.ID	Term	Annotated	Significant	Expected	test
+GO:0016048	detection of temperature stimulus	10	3	0.11	0.00013
+GO:0050951	sensory perception of temperature stimul...	10	3	0.11	0.00013
+GO:0050961	detection of temperature stimulus involv...	10	3	0.11	0.00013
+GO:0050965	detection of temperature stimulus involv...	10	3	0.11	0.00013
+GO:0062149	detection of stimulus involved in sensor...	10	3	0.11	0.00013
+GO:0007620	copulation	17	3	0.18	0.00071
+GO:0051606	detection of stimulus	190	8	2.03	0.00085
+GO:0050906	detection of stimulus involved in sensor...	149	7	1.59	0.00097
+GO:0035178	turning behavior	5	2	0.05	0.00110
+GO:0035179	larval turning behavior	5	2	0.05	0.00110
+GO:0048265	response to pain	5	2	0.05	0.00110
+GO:0048266	behavioral response to pain	5	2	0.05	0.00110
+GO:0050955	thermoception	5	2	0.05	0.00110
+GO:0050960	detection of temperature stimulus involv...	5	2	0.05	0.00110
+GO:0050966	detection of mechanical stimulus involve...	5	2	0.05	0.00110
+GO:0044255	cellular lipid metabolic process	258	9	2.75	0.00152
+GO:0006534	cysteine metabolic process	6	2	0.06	0.00164
+GO:0033555	multicellular organismal response to str...	6	2	0.06	0.00164
+GO:0046364	monosaccharide biosynthetic process	7	2	0.07	0.00228
+GO:0019233	sensory perception of pain	26	3	0.28	0.00253
+GO:0048060	negative gravitaxis	8	2	0.09	0.00301
+GO:1901607	alpha-amino acid biosynthetic process	29	3	0.31	0.00348
+GO:0050974	detection of mechanical stimulus involve...	9	2	0.1	0.00385
+GO:0044281	small molecule metabolic process	603	14	6.43	0.00385
+GO:0006629	lipid metabolic process	353	10	3.77	0.00386
+GO:0009581	detection of external stimulus	64	4	0.68	0.00465
+GO:0009582	detection of abiotic stimulus	64	4	0.68	0.00465
+GO:0008652	cellular amino acid biosynthetic process	33	3	0.35	0.00504
+GO:0050982	detection of mechanical stimulus	13	2	0.14	0.00811
+GO:0000096	sulfur amino acid metabolic process	14	2	0.15	0.00940

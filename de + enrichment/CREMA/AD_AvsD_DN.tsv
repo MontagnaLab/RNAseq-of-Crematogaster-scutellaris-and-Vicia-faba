@@ -1,0 +1,27 @@
+GO.ID	Term	Annotated	Significant	Expected	test
+GO:0006570	tyrosine metabolic process	5	2	0.03	0.00026
+GO:0006941	striated muscle contraction	5	2	0.03	0.00026
+GO:1902221	erythrose 4-phosphate/phosphoenolpyruvat...	5	2	0.03	0.00026
+GO:0009074	aromatic amino acid family catabolic pro...	6	2	0.03	0.00039
+GO:0042737	drug catabolic process	31	3	0.16	0.00051
+GO:1901605	alpha-amino acid metabolic process	75	4	0.39	0.00055
+GO:1901606	alpha-amino acid catabolic process	34	3	0.18	0.00068
+GO:0048644	muscle organ morphogenesis	8	2	0.04	0.00071
+GO:0003008	system process	404	8	2.1	0.00079
+GO:0009063	cellular amino acid catabolic process	39	3	0.2	0.00101
+GO:0048747	muscle fiber development	12	2	0.06	0.00166
+GO:0061061	muscle structure development	180	5	0.93	0.00209
+GO:0007600	sensory perception	192	5	1	0.00277
+GO:0006936	muscle contraction	16	2	0.08	0.00298
+GO:0006520	cellular amino acid metabolic process	130	4	0.67	0.00424
+GO:0016054	organic acid catabolic process	66	3	0.34	0.00462
+GO:0046395	carboxylic acid catabolic process	66	3	0.34	0.00462
+GO:0003012	muscle system process	21	2	0.11	0.00514
+GO:0055114	oxidation-reduction process	336	6	1.74	0.00665
+GO:0050877	nervous system process	342	6	1.77	0.00724
+GO:0009135	purine nucleoside diphosphate metabolic ...	26	2	0.13	0.00782
+GO:0009179	purine ribonucleoside diphosphate metabo...	26	2	0.13	0.00782
+GO:0007517	muscle organ development	81	3	0.42	0.00818
+GO:0009185	ribonucleoside diphosphate metabolic pro...	27	2	0.14	0.00842
+GO:0007606	sensory perception of chemical stimulus	85	3	0.44	0.00934
+GO:1901607	alpha-amino acid biosynthetic process	29	2	0.15	0.00968

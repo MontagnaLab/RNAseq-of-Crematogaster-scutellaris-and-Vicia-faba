@@ -1,0 +1,9 @@
+GO.ID	Term	Annotated	Significant	Expected	test
+GO:0006805	xenobiotic metabolic process	6	1	0.01	0.0072
+GO:0019236	response to pheromone	6	1	0.01	0.0072
+GO:0071466	cellular response to xenobiotic stimulus	7	1	0.01	0.0084
+GO:0007004	telomere maintenance via telomerase	8	1	0.01	0.0096
+GO:0010996	response to auditory stimulus	8	1	0.01	0.0096
+GO:0016233	telomere capping	8	1	0.01	0.0096
+GO:0035176	social behavior	8	1	0.01	0.0096
+GO:0051703	intraspecies interaction between organis...	8	1	0.01	0.0096

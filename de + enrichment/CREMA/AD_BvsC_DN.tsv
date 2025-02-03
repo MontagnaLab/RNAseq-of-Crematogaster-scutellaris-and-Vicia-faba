@@ -1,0 +1,13 @@
+GO.ID	Term	Annotated	Significant	Expected	test
+GO:0032222	regulation of synaptic transmission, cho...	10	2	0.04	0.00073
+GO:0046112	nucleobase biosynthetic process	12	2	0.05	0.00106
+GO:0007271	synaptic transmission, cholinergic	16	2	0.07	0.00191
+GO:0042136	neurotransmitter biosynthetic process	18	2	0.07	0.00242
+GO:0006313	transposition, DNA-mediated	68	3	0.28	0.00263
+GO:0010469	regulation of signaling receptor activit...	19	2	0.08	0.00270
+GO:0032196	transposition	77	3	0.32	0.00375
+GO:0009112	nucleobase metabolic process	24	2	0.1	0.00431
+GO:0044283	small molecule biosynthetic process	185	4	0.77	0.00651
+GO:0042133	neurotransmitter metabolic process	30	2	0.12	0.00668
+GO:0016053	organic acid biosynthetic process	100	3	0.41	0.00779
+GO:0046394	carboxylic acid biosynthetic process	100	3	0.41	0.00779

@@ -1,0 +1,6 @@
+GO.ID	Term	Annotated	Significant	Expected	test
+GO:0044282	small molecule catabolic process	93	3	0.26	0.0020
+GO:1901136	carbohydrate derivative catabolic proces...	37	2	0.1	0.0046
+GO:0019752	carboxylic acid metabolic process	282	4	0.79	0.0066
+GO:0006082	organic acid metabolic process	293	4	0.82	0.0076
+GO:0043436	oxoacid metabolic process	293	4	0.82	0.0076

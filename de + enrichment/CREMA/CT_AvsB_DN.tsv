@@ -1,0 +1,16 @@
+GO.ID	Term	Annotated	Significant	Expected	test
+GO:1902221	erythrose 4-phosphate/phosphoenolpyruvat...	5	2	0.02	0.00014
+GO:0044281	small molecule metabolic process	603	9	2.28	0.00020
+GO:0006570	tyrosine metabolic process	6	2	0.02	0.00020
+GO:0009074	aromatic amino acid family catabolic pro...	6	2	0.02	0.00020
+GO:0006805	xenobiotic metabolic process	7	2	0.03	0.00028
+GO:0071466	cellular response to xenobiotic stimulus	8	2	0.03	0.00038
+GO:0017144	drug metabolic process	181	5	0.68	0.00048
+GO:0055114	oxidation-reduction process	346	6	1.31	0.00142
+GO:0009069	serine family amino acid metabolic proce...	16	2	0.06	0.00159
+GO:0009072	aromatic amino acid family metabolic pro...	16	2	0.06	0.00159
+GO:0009062	fatty acid catabolic process	23	2	0.09	0.00329
+GO:0009410	response to xenobiotic stimulus	26	2	0.1	0.00420
+GO:0072329	monocarboxylic acid catabolic process	28	2	0.11	0.00486
+GO:0044248	cellular catabolic process	624	7	2.36	0.00648
+GO:1901565	organonitrogen compound catabolic proces...	355	5	1.34	0.00920

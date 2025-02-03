@@ -1,0 +1,22 @@
+GO.ID	Term	Annotated	Significant	Expected	test
+GO:1901605	alpha-amino acid metabolic process	76	3	0.11	0.00015
+GO:0009072	aromatic amino acid family metabolic pro...	16	2	0.02	0.00023
+GO:1901607	alpha-amino acid biosynthetic process	29	2	0.04	0.00077
+GO:0006520	cellular amino acid metabolic process	133	3	0.2	0.00078
+GO:0008652	cellular amino acid biosynthetic process	33	2	0.05	0.00100
+GO:0042737	drug catabolic process	33	2	0.05	0.00100
+GO:0055114	oxidation-reduction process	346	4	0.51	0.00103
+GO:1901606	alpha-amino acid catabolic process	34	2	0.05	0.00106
+GO:0009063	cellular amino acid catabolic process	38	2	0.06	0.00133
+GO:0016054	organic acid catabolic process	65	2	0.1	0.00385
+GO:0046395	carboxylic acid catabolic process	65	2	0.1	0.00385
+GO:0019752	carboxylic acid metabolic process	282	3	0.42	0.00670
+GO:0009071	serine family amino acid catabolic proce...	5	1	0.01	0.00737
+GO:1902221	erythrose 4-phosphate/phosphoenolpyruvat...	5	1	0.01	0.00737
+GO:0006082	organic acid metabolic process	293	3	0.43	0.00745
+GO:0043436	oxoacid metabolic process	293	3	0.43	0.00745
+GO:0044282	small molecule catabolic process	93	2	0.14	0.00774
+GO:0006570	tyrosine metabolic process	6	1	0.01	0.00884
+GO:0009074	aromatic amino acid family catabolic pro...	6	1	0.01	0.00884
+GO:0016053	organic acid biosynthetic process	101	2	0.15	0.00908
+GO:0046394	carboxylic acid biosynthetic process	101	2	0.15	0.00908

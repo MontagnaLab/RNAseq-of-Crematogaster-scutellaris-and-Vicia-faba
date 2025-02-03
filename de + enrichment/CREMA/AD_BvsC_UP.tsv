@@ -1,0 +1,8 @@
+GO.ID	Term	Annotated	Significant	Expected	test
+GO:0006805	xenobiotic metabolic process	6	1	0.01	0.0052
+GO:0019236	response to pheromone	6	1	0.01	0.0052
+GO:0071466	cellular response to xenobiotic stimulus	7	1	0.01	0.0060
+GO:0035176	social behavior	8	1	0.01	0.0069
+GO:0051703	intraspecies interaction between organis...	8	1	0.01	0.0069
+GO:0042045	epithelial fluid transport	11	1	0.01	0.0095
+GO:0070633	transepithelial transport	11	1	0.01	0.0095

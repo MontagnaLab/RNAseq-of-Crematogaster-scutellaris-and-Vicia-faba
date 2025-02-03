@@ -1,0 +1,13 @@
+GO.ID	Term	Annotated	Significant	Expected	test
+GO:0034724	DNA replication-independent nucleosome o...	11	3	0.11	0.00013
+GO:0044255	cellular lipid metabolic process	258	10	2.5	0.00016
+GO:0055114	oxidation-reduction process	346	11	3.35	0.00040
+GO:0065003	protein-containing complex assembly	378	11	3.66	0.00085
+GO:0034622	cellular protein-containing complex asse...	327	10	3.17	0.00103
+GO:0043933	protein-containing complex subunit organ...	456	12	4.42	0.00117
+GO:0051276	chromosome organization	456	12	4.42	0.00117
+GO:0046364	monosaccharide biosynthetic process	7	2	0.07	0.00188
+GO:0007526	larval somatic muscle development	28	3	0.27	0.00238
+GO:0035336	long-chain fatty-acyl-CoA metabolic proc...	9	2	0.09	0.00318
+GO:0044281	small molecule metabolic process	603	13	5.84	0.00429
+GO:0035337	fatty-acyl-CoA metabolic process	15	2	0.15	0.00893

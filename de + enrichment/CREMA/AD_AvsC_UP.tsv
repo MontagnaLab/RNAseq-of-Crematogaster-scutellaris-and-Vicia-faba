@@ -1,0 +1,27 @@
+GO.ID	Term	Annotated	Significant	Expected	test
+GO:0006082	organic acid metabolic process	290	11	2.96	0.00013
+GO:0043436	oxoacid metabolic process	290	11	2.96	0.00013
+GO:0016048	detection of temperature stimulus	12	3	0.12	0.00021
+GO:0050951	sensory perception of temperature stimul...	12	3	0.12	0.00021
+GO:0050961	detection of temperature stimulus involv...	12	3	0.12	0.00021
+GO:0050965	detection of temperature stimulus involv...	12	3	0.12	0.00021
+GO:0062149	detection of stimulus involved in sensor...	12	3	0.12	0.00021
+GO:0007620	copulation	19	3	0.19	0.00087
+GO:0035178	turning behavior	7	2	0.07	0.00208
+GO:0035179	larval turning behavior	7	2	0.07	0.00208
+GO:0048265	response to pain	7	2	0.07	0.00208
+GO:0048266	behavioral response to pain	7	2	0.07	0.00208
+GO:0050955	thermoception	7	2	0.07	0.00208
+GO:0050960	detection of temperature stimulus involv...	7	2	0.07	0.00208
+GO:0050966	detection of mechanical stimulus involve...	7	2	0.07	0.00208
+GO:0033555	multicellular organismal response to str...	8	2	0.08	0.00275
+GO:0019233	sensory perception of pain	29	3	0.3	0.00305
+GO:0009581	detection of external stimulus	62	4	0.63	0.00350
+GO:0009582	detection of abiotic stimulus	62	4	0.63	0.00350
+GO:0048060	negative gravitaxis	10	2	0.1	0.00437
+GO:0051606	detection of stimulus	109	5	1.11	0.00483
+GO:0050974	detection of mechanical stimulus involve...	11	2	0.11	0.00530
+GO:0050906	detection of stimulus involved in sensor...	71	4	0.72	0.00570
+GO:0000038	very long-chain fatty acid metabolic pro...	14	2	0.14	0.00860
+GO:0007618	mating	83	4	0.85	0.00986
+GO:0050982	detection of mechanical stimulus	15	2	0.15	0.00986

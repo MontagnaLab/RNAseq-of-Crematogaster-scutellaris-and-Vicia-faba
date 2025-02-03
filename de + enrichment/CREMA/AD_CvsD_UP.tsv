@@ -1,0 +1,12 @@
+GO.ID	Term	Annotated	Significant	Expected	test
+GO:0042447	hormone catabolic process	5	2	0.04	0.00048
+GO:0010817	regulation of hormone levels	74	4	0.52	0.00175
+GO:0034754	cellular hormone metabolic process	39	3	0.28	0.00253
+GO:1901361	organic cyclic compound catabolic proces...	140	5	0.99	0.00287
+GO:0046112	nucleobase biosynthetic process	12	2	0.09	0.00309
+GO:0008202	steroid metabolic process	46	3	0.33	0.00406
+GO:0042445	hormone metabolic process	52	3	0.37	0.00574
+GO:0010469	regulation of signaling receptor activit...	19	2	0.13	0.00777
+GO:0055114	oxidation-reduction process	336	7	2.38	0.00850
+GO:0007304	chorion-containing eggshell formation	60	3	0.43	0.00855
+GO:0030703	eggshell formation	62	3	0.44	0.00936
