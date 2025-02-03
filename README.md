@@ -1,6 +1,6 @@
-This repo was developed from [this one](https://github.com/for-giobbe/PAINT/tree/main) and contains all  code used to study the groundplan of a plant-ant interaction.
+This repo was developed from [this one](https://github.com/for-giobbe/PAINT/tree/main) and contains part of the code used to study a plant-ant interaction.
 
-Most of the code was generated for RNA-seq of the ant Crematogaster scutellaris and the plant Vicia faba.
+The code here was generated for RNA-seq of the ant Crematogaster scutellaris and the plant Vicia faba.
 
 In here Vicia faba will be reverenced as "vicia" and "Crematogaster scutellaris as "crema"".
 
