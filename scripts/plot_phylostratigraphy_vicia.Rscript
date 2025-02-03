@@ -1,0 +1,61 @@
+############################################################################################ parameters #######
+
+#!/usr/bin/env Rscript
+args = commandArgs(trailingOnly=TRUE)
+
+# test if there is at least one argument: if not, return an error
+if (length(args)<2) {
+  stop("At least two argument must be supplied", call.=FALSE)
+}
+
+#args[1]  = input
+#args[2]  = output
+
+############################################################################################ requirements #####
+library(ggplot2)
+library(dplyr)
+
+vicia <- read.csv(args[1],sep="\t", header=T)
+
+vicia["stratum"][vicia["stratum"] == "SPE"] <- "older"
+vicia["stratum"][vicia["stratum"] == "HOL"] <- "older"
+
+vicia["stratum"][vicia["stratum"] == "PAP"] <- "Papilionoideae"
+vicia["stratum"][vicia["stratum"] == "FAB"] <- "Fabales"
+vicia["stratum"][vicia["stratum"] == "ROS"] <- "rosids"
+vicia["stratum"][vicia["stratum"] == "EUD"] <- "eudicotyledons"
+vicia["stratum"][vicia["stratum"] == "ANG"] <- "Magnoliophyta"
+
+vicia_pct_mod <- vicia %>% count(expression, stratum) %>%
+  mutate(pct=n/sum(n))
+
+vicia_pct_tot <- vicia %>% count(stratum) %>%
+  mutate(pct=n/sum(n))
+vicia_pct_tot$expression <- "total"
+
+vicia <- rbind(vicia_pct_tot,vicia_pct_mod)
+
+vicia<-vicia[!(vicia$expression=="-"),]
+
+p <- ggplot(vicia, aes(fill=factor(stratum, levels=c("species-specific",
+                                                     "Papilionoideae",
+                                                     "Fabales",
+                                                     "rosids",
+                                                     "eudicotyledons",
+                                                     "Magnoliophyta",
+                                                     "older")), y=pct, x=factor(expression, levels=c("UP","DN","total")))) + 
+  geom_bar(position="fill", stat="identity") + coord_flip() +
+  scale_fill_manual(values=c("#ffea00",
+                             "#c8e331",
+                             "#95d84f",
+                             "#67ca66",
+                             "#3cba78",
+                             "#11a984",
+                             "#009688")) +
+  theme(panel.grid.major = element_blank(),panel.grid.minor = element_blank()) +
+  theme(legend.title=element_blank()) + 
+  theme(aspect.ratio = 0.4) + theme(axis.title = element_blank()) +
+  theme( panel.background = element_rect(fill = "white", colour = "white"))
+
+ggsave(args[2],p,width = 10, height = 5)
+

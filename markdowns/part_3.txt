@@ -1,0 +1,106 @@
+# differential expression and enrichment in vicia
+
+
+environiment: yaml.DE
+
+
+aim: retrieve vicia genes which undergo expression changes and charachterize thier function
+
+
+---
+
+
+For vicia begin, transcript abundances are inferred using the script slurm_abundances_vicia which uses bowtie and RSEM.
+
+
+The outputs need to be then moved from the main folder to the appropriate one usings mv _rep*  abundances/vicia.
+
+
+After that we can proceed to build expression matrices by:
+
+
+abundance_estimates_to_matrix.pl --est_method RSEM
+--gene_trans_map assemblies/vicia/vicia.Trinity.fasta.gene_trans_map --name_sample_by_basedir 
+abundances/vicia/v_rep1/RSEM.isoforms.results 
+abundances/vicia/v_rep2/RSEM.isoforms.results 
+abundances/vicia/v_rep3/RSEM.isoforms.results 
+abundances/vicia/v_rep4/RSEM.isoforms.results 
+abundances/vicia/v_rep5/RSEM.isoforms.results 
+abundances/vicia/n_rep1/RSEM.isoforms.results 
+abundances/vicia/n_rep2/RSEM.isoforms.results 
+abundances/vicia/n_rep3/RSEM.isoforms.results 
+abundances/vicia/n_rep4/RSEM.isoforms.results 
+abundances/vicia/n_rep5/RSEM.isoforms.results 
+--out_prefix RSEM_vicia
+
+
+after moving the outputs to the right place with mv RSEM_vicia.* abundances/vicia/ we can take a look at the outputs:
+
+
+RSEM_vicia.gene.TMM.EXPR.matrix
+RSEM_vicia.gene.TPM.not_cross_norm
+RSEM_vicia.gene.TPM.not_cross_norm.TMM_info.txt
+RSEM_vicia.gene.TPM.not_cross_norm.runTMM.R
+RSEM_vicia.gene.counts.matrix
+RSEM_vicia.isoform.TMM.EXPR.matrix
+RSEM_vicia.isoform.TPM.not_cross_norm
+RSEM_vicia.isoform.TPM.not_cross_norm.TMM_info.txt
+RSEM_vicia.isoform.TPM.not_cross_norm.runTMM.R
+RSEM_vicia.isoform.counts.matrix
+
+---
+
+Now we need to remove possible contaminants from the gene-counts matrix which we will use for differential expression:
+
+
+Initially the contaminants list needs to be formatted from isoforms to genes:
+
+
+awk -F "_" 'NF{NF-=1};1' contaminants/vicia/vicia.blastp.contaminants_contigs.lst | 
+sed 's/ /_/g' > contaminants/vicia/vicia.blastp.contaminants_genes.lst
+
+
+
+and then a gene-level raw-counts matrix without them is generated:
+
+
+
+grep -v -f contaminants/vicia/vicia.blastp.contaminants_genes.lst 
+abundances/vicia/RSEM_vicia.gene.counts.matrix > abundances/vicia/RSEM_vicia.filtered.gene.counts.matrix
+
+
+---
+
+
+Now we generated GO terms using the assembled proteome as input for the "Gene Ontology Function Projection" 
+function available here: https://omabrowser.org/oma/functions/
+
+
+Then we reformatted  GO terms in BASH:
+
+
+for i in $(awk '{print $2}' Vicia_OMA.gaf2 | sort -u | grep TRINITY); do 
+GO1=$(ggrep $i Vicia_OMA.gaf2 | awk '{print $4}'); 
+GO2=$(echo $GO1 | sed 's/ /,/g'); 
+gene=$(echo $i | awk -F "_i" '{print $1}' ); 
+echo -e -n $gene"\t"$GO2 "\n"; 
+done > Vicia_OMA.ref.gaf2"
+
+
+---
+
+
+The DE and enrichment analyses were performed using DESeq2 and topGO, embedded in the script de_vicia.R which was run locally.
+
+Here are some of the parameters of the script:
+
+lgfc <- 1            # log fold change for enrichment
+pvgo <- 0.01         # pvalue for enrichment
+pvde <- 0.05         # pvalue for enrichment
+ndsz <- 5            # node size for enrichment
+algr <- "classic"    # algorythm for enrichment
+onto <- "BP"	     # either BP, MF or CC
+treshold <- 0.3		 # semantic similarity clustering
+  
+
+---

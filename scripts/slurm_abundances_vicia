@@ -1,0 +1,17 @@
+#!/bin/bash
+#SBATCH -o /home/users/giobbe.forni/gen_red/paint/abundances/vicia/myjob.%j.%N-%t.out
+#SBATCH -D /home/users/giobbe.forni/gen_red/paint/abundances/vicia/myjob.%j.%N-%t.err
+#SBATCH -J abundances_vicia
+#SBATCH --get-user-env
+#SBATCH -p light
+#SBATCH --nodes=1
+#SBATCH -c 16                     # Number of cores per task
+#SBATCH --mem-per-cpu 2000       #  Mem for each core
+#SBATCH --time=2-00:00:00
+#SBATCH --account=gen_red
+
+module load Mlnx/hpcx
+
+cd /home/users/giobbe.forni/gen_red/paint/
+
+align_and_estimate_abundance.pl --seqType fq  --samples_file vicia_samples.txt --transcripts assemblies/vicia/vicia.Trinity.fasta --est_method RSEM  --aln_method bowtie --trinity_mode --output_dir abundances/vicia/ --prep_reference

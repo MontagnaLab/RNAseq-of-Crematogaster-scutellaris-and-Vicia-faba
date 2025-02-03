@@ -1,0 +1,38 @@
+chunk = [str(x).zfill(2) for x in range(1,41)]
+
+rule all:
+	input:
+		 'contaminants/crema/crema.blastp.contaminants_contigs.lst',
+	shell:	 'rm slurm-*'
+
+rule split_fasta:
+	input:
+		 'contaminants/crema/crema.Trinity.fasta.transdecoder.pep'
+	output:
+                 expand('contaminants/crema/crema.Trinity.fasta.transdecoder.part-{chunk}.pep', chunk = chunk)
+	conda:   '../env/fasta-splitter.yaml'
+	shell:   'fasta-splitter -n-parts 40 --measure seq --out-dir contaminants/crema/ {input}'
+
+rule blastp:
+	input:
+                 'contaminants/crema/crema.Trinity.fasta.transdecoder.part-{chunk}.pep'
+	output:
+                 'contaminants/crema/crema.{chunk}.blastp.outfmt6'
+	threads: 8
+	conda:	 '../env/diamond.yaml'
+	shell:   'blastp -query {input} -task blastp-fast -db dbs/nr/nr -max_target_seqs 50 -max_hsps 1 -evalue 1e-7 -outfmt "6 qseqid sseqid evalue staxids"  -num_threads {threads} > {output}'
+
+rule taxonomy_assignement:
+	input:
+		 rules.blastp.output
+	output:
+		 contaminants=temp('contaminants/crema/crema.{chunk}.contaminants.lst'),
+	conda:   '../env/taxonkit.yaml'
+	shell:   'bash scripts/taxonomy_filter.sh {input} {output.contaminants} Metazoa 0.8' 
+
+rule merge_contaminants_contigs:
+        input:
+                  expand('contaminants/crema/crema.{chunk}.contaminants.lst', chunk = chunk)
+        output:
+                  'contaminants/crema/crema.blastp.contaminants_contigs.lst'
+        shell:    'cat {input} >> {output}'

@@ -1,0 +1,33 @@
+sample = ['CR_A_01_AD','CR_A_01_AD','CR_A_01_CT','CR_A_01_CT','CR_A_02_AD','CR_A_02_AD','CR_A_02_CT','CR_A_02_CT','CR_A_03_AD','CR_A_03_AD','CR_A_03_CT','CR_A_03_CT','CR_A_05_AD','CR_A_05_AD','CR_A_05_CT','CR_A_05_CT','CR_A_06_AD','CR_A_06_AD','CR_A_06_CT','CR_A_06_CT',
+'CR_B_01_AD','CR_B_01_AD','CR_B_01_CT','CR_B_01_CT','CR_B_02_AD','CR_B_02_AD','CR_B_02_CT','CR_B_02_CT','CR_B_03_AD','CR_B_03_AD','CR_B_03_CT','CR_B_03_CT','CR_B_04_AD','CR_B_04_AD','CR_B_04_CT','CR_B_04_CT','CR_B_05_AD','CR_B_05_AD','CR_B_05_CT','CR_B_05_CT',
+'CR_C_02_AD','CR_C_02_AD','CR_C_02_CT','CR_C_02_CT','CR_C_03_AD','CR_C_03_AD','CR_C_03_CT','CR_C_03_CT','CR_C_06_AD','CR_C_06_AD','CR_C_06_CT','CR_C_06_CT','CR_C_07_AD','CR_C_07_AD','CR_C_07_CT','CR_C_07_CT','CR_C_08_AD','CR_C_08_AD','CR_C_08_CT','CR_C_08_CT',
+'CR_D_01_AD','CR_D_01_AD','CR_D_01_CT','CR_D_01_CT','CR_D_02_AD','CR_D_02_AD','CR_D_02_CT','CR_D_02_CT','CR_D_03_AD','CR_D_03_AD','CR_D_03_CT','CR_D_03_CT','CR_D_04_AD','CR_D_04_AD','CR_D_04_CT','CR_D_04_CT','CR_D_06_AD','CR_D_06_AD','CR_D_06_CT','CR_D_06_CT']
+
+mate = ['1','2']
+
+rule all:
+	input:
+		expand('reads/crema_ref/{sample}_trimmed_{mate}P_fastqc.html', sample = sample, mate = mate)
+
+rule trimmomatic:
+        input:
+              	l='reads/crema_ref/{sample}_1.fastq.gz',
+		r='reads/crema_ref/{sample}_2.fastq.gz'
+        output:
+               	oP=temp('reads/crema_ref/{sample}_trimmed_1P'),
+		tP=temp('reads/crema_ref/{sample}_trimmed_2P'),
+		oU=temp('reads/crema_ref/{sample}_trimmed_1U'),
+		tU=temp('reads/crema_ref/{sample}_trimmed_2U')
+	threads: 8
+        conda:  '../env/trimmomatic.yaml'
+        shell:  'trimmomatic PE {input.l} {input.r} {output.oP} {output.oU} {output.tP} {output.tU} -threads {threads} '
+		'ILLUMINACLIP:/gpfs/home/projects/gen_red/cartella/env/paint/share/trimmomatic-0.39-2/adapters/TruSeq3-PE.fa:2:30:10:2:TRUE SLIDINGWINDOW:28:30 LEADING:28 TRAILING:28 MINLEN:99'
+
+rule fastqc:
+	input:
+		rules.trimmomatic.output.oP, rules.trimmomatic.output.tP
+	output:
+		temp('reads/crema_ref/{sample}_trimmed_1P_fastqc.zip'),temp('reads/crema_ref/{sample}_trimmed_2P_fastqc.zip'),
+		'reads/crema_ref/{sample}_trimmed_1P_fastqc.html', 'reads/crema_ref/{sample}_trimmed_2P_fastqc.html'
+	conda:	'../env/fastqc.yaml'
+	shell:	'fastqc {input}'

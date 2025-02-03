@@ -1,0 +1,30 @@
+sample = ['N_20','N_21','N_22','N_23','N_24','V_26','V_27','V_28','V_30','V_31']
+
+mate = ['1','2']
+
+rule all:
+	input:
+		expand('reads/vicia_ref/VI_{sample}_NP_trimmed_{mate}P_fastqc.html', sample = sample, mate = mate)
+
+rule trimmomatic:
+        input:
+              	l='reads/vicia_ref/VI_{sample}_NP_1.fastq.gz',
+		r='reads/vicia_ref/VI_{sample}_NP_2.fastq.gz'
+        output:
+               	oP=temp('reads/vicia_ref/VI_{sample}_NP_trimmed_1P'),
+		tP=temp('reads/vicia_ref/VI_{sample}_NP_trimmed_2P'),
+		oU=temp('reads/vicia_ref/VI_{sample}_NP_trimmed_1U'),
+		tU=temp('reads/vicia_ref/VI_{sample}_NP_trimmed_2U')
+	threads: 8
+        conda:  '../env/trimmomatic.yaml'
+        shell:  'trimmomatic PE {input.l} {input.r} {output.oP} {output.oU} {output.tP} {output.tU} -threads {threads} '
+		'ILLUMINACLIP:/gpfs/home/projects/gen_red/cartella/env/paint/share/trimmomatic-0.39-2/adapters/TruSeq3-PE.fa:2:30:10:2:TRUE SLIDINGWINDOW:28:30 LEADING:28 TRAILING:28 MINLEN:99'
+
+rule fastqc:
+	input:
+		rules.trimmomatic.output.oP, rules.trimmomatic.output.tP
+	output:
+		temp('reads/vicia_ref/VI_{sample}_NP_trimmed_1P_fastqc.zip'),temp('reads/vicia_ref/VI_{sample}_NP_trimmed_2P_fastqc.zip'),
+		'reads/vicia_ref/VI_{sample}_NP_trimmed_1P_fastqc.html', 'reads/vicia_ref/VI_{sample}_NP_trimmed_2P_fastqc.html'
+	conda:	'../env/fastqc.yaml'
+	shell:	'fastqc {input}'

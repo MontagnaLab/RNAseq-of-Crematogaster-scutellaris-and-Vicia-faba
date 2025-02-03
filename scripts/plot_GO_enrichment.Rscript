@@ -1,0 +1,69 @@
+############################################################################################ parameters #######
+
+#!/usr/bin/env Rscript
+args = commandArgs(trailingOnly=TRUE)
+
+# test if there is at least one argument: if not, return an error
+if (length(args)<3) {
+  stop("At least one argument must be supplied (input file).n", call.=FALSE)
+}
+
+input <- args[1]
+color <- args[2]
+pcut <- args[3]
+
+############################################################################################ requirements #######
+
+require(topGO)
+library(data.table)
+library(dplyr)
+library(formattable)
+library(tidyr)
+library(htmltools)
+library(webshot)    
+
+################################################################################################################################ function1 ####
+
+export_formattable <- function(f, file, width = "100%", height = NULL, 
+                               background = "white", delay = 0.2)
+{
+  w <- as.htmlwidget(f, width = width, height = height)
+  path <- html_print(w, background = background, viewer = NULL)
+  url <- paste0("file:///", gsub("\\\\", "/", normalizePath(path)))
+  webshot(url,
+          file = file,
+          selector = ".formattable_widget",
+          delay = delay)
+}
+
+################################################################################################################################ function2 ####
+
+enrichment_table <- function(topGO_output, color){
+  table <- read.table(topGO_output, header = T, sep = "\t")
+  table <- table[order(table$test,decreasing = F),]
+  row.names(table) <- NULL
+  table$color <- -log(as.numeric(table$test))
+  
+  table$ratio <- table$Significant / table$Expected
+  table$Significant <- NULL
+  table$Expected <- NULL
+  table$Annotated <- NULL
+  table$ratio <- round(table$ratio,1)
+  
+  colnames(table) <- c("id","term","p","color","sig/exp")
+  table[nrow(table) + 1,] = c(" "," ",pcut,-log(0.01),0)
+  table[nrow(table) + 1,] = c(" "," ",0,Inf,0)
+  
+  outpout <- paste(topGO_output,".png", sep = "")
+  
+  plot <- formattable(table, list(color = FALSE, Expected = FALSE,
+                                                                              `id` = formatter("span", style = ~ style(color = "black",font.weight = "bold")), 
+                                                                              `p`= color_tile(color, "white"), 
+                                                                              `sig/exp`= color_bar(color)),
+                                               table.attr = 'style="font-size: 20px; font-family: Arial";\"')
+  export_formattable(plot,outpout)
+}
+
+################################################################################################################################ actual stuff ####
+
+enrichment_table(input, color)

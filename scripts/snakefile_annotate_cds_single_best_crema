@@ -1,0 +1,84 @@
+species = ['crema']
+
+chunk = [str(x).zfill(2) for x in range(1,21)]
+
+rule all:
+	input:
+               	 cds='crema.Trinity.fasta.transdecoder.cds',
+                 gff='crema.Trinity.fasta.transdecoder.gff3',
+                 pep='crema.Trinity.fasta.transdecoder.pep'
+	shell:  ''
+
+rule longest_isoform:
+        input:
+              	 'annotations/crema/crema.Trinity.fasta'
+        output:
+               	 'annotations/crema/crema.longest_isoform.fasta'
+        conda:   '../env/trinity.yaml'
+        shell:   'perl /gpfs/home/projects/gen_red/cartella/env/paint/opt/trinity-2.8.5/util/misc/get_longest_isoform_seq_per_trinity_gene.pl {input} > {output}'
+
+
+rule transdecoder_longorfs:
+	input:
+		rules.longest_isoform.output
+	output:
+		'annotations/crema/longest_orfs.pep'
+	params:
+		 basename='annotations/crema/'
+	conda:   '../env/transdecoder.yaml'
+	shell:   'TransDecoder.LongOrfs -t {input} --output_dir {params.basename}'
+
+rule split_fasta:
+	input:
+		 rules.transdecoder_longorfs.output
+	output:
+		 expand('annotations/crema/longest_orfs.part-{chunk}.pep', chunk = chunk)
+	conda:   '../env/pyfasta.yaml'
+	shell:   'fasta-splitter -n-parts 20 --measure seq --out-dir annotations/crema/ {input}'
+
+rule hmmscan:
+	input:
+		 'annotations/crema/longest_orfs.part-{chunk}.pep'
+	output:
+		 'annotations/crema/longest_orfs.pep.part-{chunk}.fasta.pfam.domtblout'
+	threads: 10
+	conda:   '../env/hmmscan.yaml'
+	shell:   'hmmscan --cpu {threads} --domtblout {output} dbs/pfam/Pfam-A.hmm {input}'
+
+rule blastp:
+	input:
+		 'annotations/crema/longest_orfs.part-{chunk}.pep'
+	output:
+	 	 'annotations/crema/longest_orfs.pep.part-{chunk}.fasta.blastp.outfmt6'
+	threads: 10
+	conda:   '../env/blast.yaml'
+	shell:   'blastp -query {input} -db dbs/swissprot/uniprot_sprot.fasta -max_target_seqs 1 -outfmt 6 -evalue 1e-5 -num_threads {threads} > {output}'
+
+rule merge_blast:
+	input: 
+		  expand('annotations/crema/longest_orfs.pep.part-{chunk}.fasta.blastp.outfmt6', chunk = chunk)
+	output:
+		  'annotations/crema/crema.outfmt6'
+	shell:    'cat {input} >> {output}'
+
+rule merge_hmmer:
+        input:                                                                            
+              	  expand('annotations/crema/longest_orfs.pep.part-{chunk}.fasta.pfam.domtblout', chunk = chunk)
+        output:
+                  'annotations/crema/crema.domtblout'
+        shell:	  'cat {input} >> {output}'
+
+rule transdecoder_predict:
+	input:
+		 assembly = 'annotations/crema/crema.Trinity.fasta',
+		 blast    = 'annotations/crema/crema.outfmt6',
+		 hmmscan  = 'annotations/crema/crema.domtblout'
+	output:
+		 cds='crema.Trinity.fasta.transdecoder.cds',
+                 gff='crema.Trinity.fasta.transdecoder.gff3',
+                 pep='crema.Trinity.fasta.transdecoder.pep'
+	params:
+		 basename='annotations/crema'
+	conda:   '../env/transdecoder.yaml'
+	shell:   'TransDecoder.Predict -t {input.assembly} --retain_pfam_hits {input.hmmscan} --retain_blastp_hits {input.blast} --single_best_only --output_dir {params.basename}'
+

@@ -1,0 +1,32 @@
+############################################################################################ parameters #######
+
+#!/usr/bin/env Rscript
+args = commandArgs(trailingOnly=TRUE)
+
+# test if there is at least one argument: if not, return an error
+if (length(args)<3) {
+  stop("too few arguments", call.=FALSE)
+}
+
+#args[1]  Rdata
+#args[2]  GOterm
+#args[3]  subset of genes (DE/modules)
+
+myterm <- args[2]
+genesub <- args[3]
+
+############################################################################################ requirements #######
+
+load(args[1])
+
+library(topGO)
+library(tidyr)
+
+############################################################################################ requirements #######
+
+allgenes <- genesInTerm(myGOdata, whichGO=myterm)
+subgenes <- read.table(genesub,header=FALSE,sep="\t")
+intersect(as.vector(allgenes[[1]]),as.vector(subgenes$V1))
+
+
+
